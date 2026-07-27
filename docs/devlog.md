@@ -23,3 +23,7 @@ Phase 0 is done for mykaia-app. Private GitHub repo confirmed (`TheSeeker713/myk
 ## 2026-07-27 5:09 PM MDT — Temporary visibility: public
 
 Switched `TheSeeker713/mykaia-app` to PUBLIC temporarily so an external read-only check can see the repo. Confirmed with `gh repo view --json visibility`: PUBLIC. This is temporary only. Revert to private by end of day today. Do not treat public as the standing state.
+
+## 2026-07-27 5:23 PM MDT — Phase 1 Step 1.1
+
+Resumed Flutter SDK setup after the earlier doctor run got cut off mid-download. Confirmed `D:\_Dev\tools\flutter` is a complete stable clone (branch stable, head `058e0af2c2`, packages and bin present). Prepended that bin path for the session. `flutter --version` reports Flutter 3.44.8 / Dart 3.12.2. `flutter doctor -v` finished clean for Windows: Visual Studio Build Tools 2026 18.7.3 with Windows 10 SDK 10.0.26100.0, Windows desktop device available. Android SDK is missing, which is fine for this Windows-only phase. SDK itself stays outside the repo. This commit is only the devlog.
