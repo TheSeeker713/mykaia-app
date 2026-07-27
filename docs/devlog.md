@@ -31,3 +31,7 @@ Resumed Flutter SDK setup after the earlier doctor run got cut off mid-download.
 ## 2026-07-27 5:27 PM MDT — Phase 1 Step 1.2
 
 Ran `flutter create --platforms=windows --org=com.myceliainteractive --project-name=mykaia_app .` in this repo. Wired `pubspec.yaml` with flutter_riverpod, go_router, drift, sqlite3 3.x (`hooks.user_defines.sqlite3.source: sqlite3mc`), path_provider, path, flutter_secure_storage, webview_flutter, and flutter_gemma. Dev deps: drift_dev, build_runner, flutter_lints. Replaced the default counter app with `ProviderScope` + `MaterialApp.router`, a single home route in `lib/app/router.dart`, and a minimal theme in `lib/app/theme.dart`. `flutter pub get` succeeded after pinning sqlite3 to ^3.2.0. `flutter analyze`: no issues. `flutter test`: 1/1 passed.
+
+## 2026-07-27 5:28 PM MDT — Phase 1 Step 1.3
+
+Added the docs pack under `docs/`: `ROADMAP.md`, `ARCHITECTURE.md`, `AGENT_FALLBACK_DESIGN.md` (full Tier 0/1/2 ladder with KAIA persona-lock / LoRA requirement and Ollama-vs-Tier-1 note, deferred to Phase 6+), `DATA_MODEL.md`, and `BRIDGE_PROTOCOL.md`. Copied `MYKAIA_PRODUCT_PLAN.md` and `_source_plan_archive.md` from `D:\_Dev\docs\KAIA_(Keep_At_It_Always)\` and left the originals in place. Markdown placement check passed (only README, AGENTS, docs, and the existing Phase 0 `.cursor/instructions.md`).
