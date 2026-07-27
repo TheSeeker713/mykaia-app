@@ -35,3 +35,7 @@ Ran `flutter create --platforms=windows --org=com.myceliainteractive --project-n
 ## 2026-07-27 5:28 PM MDT — Phase 1 Step 1.3
 
 Added the docs pack under `docs/`: `ROADMAP.md`, `ARCHITECTURE.md`, `AGENT_FALLBACK_DESIGN.md` (full Tier 0/1/2 ladder with KAIA persona-lock / LoRA requirement and Ollama-vs-Tier-1 note, deferred to Phase 6+), `DATA_MODEL.md`, and `BRIDGE_PROTOCOL.md`. Copied `MYKAIA_PRODUCT_PLAN.md` and `_source_plan_archive.md` from `D:\_Dev\docs\KAIA_(Keep_At_It_Always)\` and left the originals in place. Markdown placement check passed (only README, AGENTS, docs, and the existing Phase 0 `.cursor/instructions.md`).
+
+## 2026-07-27 5:30 PM MDT — Phase 1 Step 1.4
+
+Added `lib/core/paths/ai_setup_paths.dart` with constants rooted at `D:\_Dev\AI-Setup\mykaia` (root, models, model_cache, model_prep). Updated `docs/ARCHITECTURE.md` with the flutter_gemma `%LOCALAPPDATA%` override note pointing at `AiSetupPaths.modelCache`. Tightened `.gitignore` for `*.litertlm` / model caches. `flutter analyze`: no issues.

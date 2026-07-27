@@ -19,8 +19,12 @@ build/
 Thumbs.db
 desktop.ini
 
-# Model binaries (never commit)
+# Model binaries and local AI caches (never commit)
 *.litertlm
 *.task
 *.gguf
 **/model_cache/
+**/models/*.litertlm
+**/models/*.task
+**/models/*.gguf
+.ai_setup_local/

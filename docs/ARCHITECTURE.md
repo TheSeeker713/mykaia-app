@@ -43,9 +43,11 @@ Flutter shell (chat, journal, tasks, settings, HUD)
 
 Prefer D: for SDK, pub cache intent, and model assets. Do not point project model config at C: paths.
 
+Code constants: [`lib/core/paths/ai_setup_paths.dart`](../lib/core/paths/ai_setup_paths.dart) (`AiSetupPaths.root`, `models`, `modelCache`, `modelPrep`).
+
 ### flutter_gemma desktop cache override (Phase 6+)
 
-By default, flutter_gemma on Windows stores downloaded models under `%LOCALAPPDATA%\flutter_gemma\`. When Tier 1 is wired, MyKAIA must override or redirect that cache so model files live under `D:\_Dev\AI-Setup\mykaia\` (see AI-Setup path constants). Documented here now; implement at Tier 1 wiring time.
+By default, flutter_gemma on Windows stores downloaded models under `%LOCALAPPDATA%\flutter_gemma\` (often on C:). When Tier 1 is wired, MyKAIA must override or redirect that cache to `AiSetupPaths.modelCache` (`D:\_Dev\AI-Setup\mykaia\model_cache`). Documented here now; implement at Tier 1 wiring time. Never commit `.litertlm` or other model binaries.
 
 ## Bridge
 
