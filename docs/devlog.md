@@ -27,3 +27,7 @@ Switched `TheSeeker713/mykaia-app` to PUBLIC temporarily so an external read-onl
 ## 2026-07-27 5:23 PM MDT — Phase 1 Step 1.1
 
 Resumed Flutter SDK setup after the earlier doctor run got cut off mid-download. Confirmed `D:\_Dev\tools\flutter` is a complete stable clone (branch stable, head `058e0af2c2`, packages and bin present). Prepended that bin path for the session. `flutter --version` reports Flutter 3.44.8 / Dart 3.12.2. `flutter doctor -v` finished clean for Windows: Visual Studio Build Tools 2026 18.7.3 with Windows 10 SDK 10.0.26100.0, Windows desktop device available. Android SDK is missing, which is fine for this Windows-only phase. SDK itself stays outside the repo. This commit is only the devlog.
+
+## 2026-07-27 5:27 PM MDT — Phase 1 Step 1.2
+
+Ran `flutter create --platforms=windows --org=com.myceliainteractive --project-name=mykaia_app .` in this repo. Wired `pubspec.yaml` with flutter_riverpod, go_router, drift, sqlite3 3.x (`hooks.user_defines.sqlite3.source: sqlite3mc`), path_provider, path, flutter_secure_storage, webview_flutter, and flutter_gemma. Dev deps: drift_dev, build_runner, flutter_lints. Replaced the default counter app with `ProviderScope` + `MaterialApp.router`, a single home route in `lib/app/router.dart`, and a minimal theme in `lib/app/theme.dart`. `flutter pub get` succeeded after pinning sqlite3 to ^3.2.0. `flutter analyze`: no issues. `flutter test`: 1/1 passed.
