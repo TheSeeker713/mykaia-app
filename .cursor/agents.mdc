@@ -1,0 +1,27 @@
+---
+description: Binding session rules for mykaia-app. Created once in Phase 0. READ ONLY after initial creation. Do not write or edit this file in any future session.
+globs:
+alwaysApply: true
+---
+
+# mykaia-app — agents.mdc (READ ONLY)
+
+**READ-ONLY RULE:** This file was created once during Phase 0. Do not write, edit, rewrite, or patch `.cursor/agents.mdc` in any later session. If rules need to change, update `AGENTS.md` or `.cursor/instructions.md` instead, or wait for Jeremy's explicit instruction to recreate this file.
+
+## Scope
+
+This repository is **mykaia-app**, the Flutter product for MyKAIA. The sibling repo **mykaia-web** is separate. Do not mix Hub, marketplace, landing page, or download-portal work into this repo.
+
+## Standing rules
+
+1. Verification before assertion: confirm filesystem/git/build state before claiming success.
+2. Tests before commit: relevant checks must pass clean before any commit.
+3. Commit and push to `origin/main` after every completed step in this repo.
+4. Append `docs/devlog.md` every step, first person as Jeremy, no em dashes, no contrast constructions.
+5. Markdown only in `/README.md`, `/AGENTS.md`, and `/docs/`.
+6. Branch policy: `main` only.
+7. CDP / live deploy: out of scope until Jeremy gives separate explicit approval for that action.
+
+## Stack (locked for this repo)
+
+Flutter stable + Dart 3.x, Riverpod, go_router, Drift/SQLite with sqlite3mc encryption for journal entries, flutter_secure_storage for keys. World/WebView and flutter_gemma wiring are deferred until later phases.

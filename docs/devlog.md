@@ -11,3 +11,7 @@ Stood up this repo from an empty folder at `D:\_Dev\Projects\MyKAIA\mykaia-app`.
 Confirmed with `gh repo view`: name `mykaia-app`, visibility PRIVATE, url https://github.com/TheSeeker713/mykaia-app. First commit hash: `d5b6faf71e1c533def75f7c631b3cb42156fe223`.
 
 This entry is the second commit of Step 0.1, documenting that creation.
+
+## 2026-07-27 4:51 PM MDT — Phase 0 Step 0.2
+
+Added the governance set for this app repo: `AGENTS.md`, `.cursor/agents.mdc`, `.cursor/instructions.md`, and a full `README.md`. Checked that each file exists and is non-empty, and that `agents.mdc` states its own read-only rule after Phase 0. Ready to commit and push this set on main.
