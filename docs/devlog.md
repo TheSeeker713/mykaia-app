@@ -39,3 +39,7 @@ Added the docs pack under `docs/`: `ROADMAP.md`, `ARCHITECTURE.md`, `AGENT_FALLB
 ## 2026-07-27 5:30 PM MDT — Phase 1 Step 1.4
 
 Added `lib/core/paths/ai_setup_paths.dart` with constants rooted at `D:\_Dev\AI-Setup\mykaia` (root, models, model_cache, model_prep). Updated `docs/ARCHITECTURE.md` with the flutter_gemma `%LOCALAPPDATA%` override note pointing at `AiSetupPaths.modelCache`. Tightened `.gitignore` for `*.litertlm` / model caches. `flutter analyze`: no issues.
+
+## 2026-07-27 5:31 PM MDT — Phase 1 Step 1.5
+
+Ran `flutter pub get` again to confirm the lockfile is current. There is no Drift `@DriftDatabase` stub in `lib/` yet this phase, so I skipped `build_runner` rather than inventing a fake codegen run. `flutter analyze`: no issues. No lockfile delta after this pass, so this commit is the step devlog only.
