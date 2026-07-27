@@ -19,3 +19,7 @@ Added the governance set for this app repo: `AGENTS.md`, `.cursor/agents.mdc`, `
 ## 2026-07-27 4:51 PM MDT — Phase 0 Step 0.3 closeout
 
 Phase 0 is done for mykaia-app. Private GitHub repo confirmed (`TheSeeker713/mykaia-app`). Governance files are on main: `AGENTS.md`, `.cursor/agents.mdc` (read-only going forward), `.cursor/instructions.md`, and the full README. Working tree is clean after this closeout push. Next work for this repo is Phase 1 (Flutter Windows prototype).
+
+## 2026-07-27 5:09 PM MDT — Temporary visibility: public
+
+Switched `TheSeeker713/mykaia-app` to PUBLIC temporarily so an external read-only check can see the repo. Confirmed with `gh repo view --json visibility`: PUBLIC. This is temporary only. Revert to private by end of day today. Do not treat public as the standing state.
