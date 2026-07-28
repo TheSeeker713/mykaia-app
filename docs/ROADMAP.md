@@ -1,4 +1,4 @@
-# MyKAIA Roadmap
+﻿# MyKAIA Roadmap
 
 Continuous phase numbering across **mykaia-app** and **mykaia-web**. Phases do not reset per repo.
 
@@ -17,7 +17,7 @@ Hub, marketplace, landing page, and download portal code are **never** scaffolde
 |-------|------|--------|
 | **0** | both | Private repos, governance, devlog (done) |
 | **1** | mykaia-app | Windows Flutter prototype shell (done) |
-| **2** | mykaia-app | Port KAIA Wrapper UI/UX + full visual asset migration (UI/UX only; no live agent) |
+| **2** | mykaia-app | Port KAIA Wrapper UI/UX + full visual asset migration (done; UI/UX only) |
 | **3** | mykaia-web | Landing page prototype (Next.js static + Cloudflare Workers) |
 | **4** | mykaia-web | Hub catalog / browsing UI prototype (stubbed data) |
 | **5** | mykaia-web | Marketplace install/uninstall + permissions UI prototype |
@@ -28,7 +28,7 @@ Hub, marketplace, landing page, and download portal code are **never** scaffolde
 
 | Date | Change |
 |------|--------|
-| 2026-07-27 | Inserted Phase 2 as **KAIA Wrapper UI/UX + asset port** into mykaia-app. Shifted former web phases: landing 2→3, Hub 3→4, Marketplace 4→5, app-as-web 5→6, MVP hardening 6+→7+. Reason: `_KAIA_Wrapper` already has a usable UI shell and media pack (product plan section 17 donor map). Pulling that chrome into mykaia-app now avoids rebuilding the same shell later. |
+| 2026-07-27 | Inserted Phase 2 as **KAIA Wrapper UI/UX + asset port** into mykaia-app. Shifted former web phases: landing 2â†’3, Hub 3â†’4, Marketplace 4â†’5, app-as-web 5â†’6, MVP hardening 6+â†’7+. Reason: `_KAIA_Wrapper` already has a usable UI shell and media pack (product plan section 17 donor map). Pulling that chrome into mykaia-app now avoids rebuilding the same shell later. |
 
 ## Platform sequencing (mykaia-app)
 
@@ -37,7 +37,7 @@ Hub, marketplace, landing page, and download portal code are **never** scaffolde
 3. **iOS + Android** (signing / store review; does not block desktop)
 4. World / live-agent / deeper integration per product plan
 
-## Map to product plan sections A–H
+## Map to product plan sections Aâ€“H
 
 Source: [`MYKAIA_PRODUCT_PLAN.md`](MYKAIA_PRODUCT_PLAN.md) section 16.
 
@@ -50,7 +50,7 @@ Source: [`MYKAIA_PRODUCT_PLAN.md`](MYKAIA_PRODUCT_PLAN.md) section 16.
 | **E** | Web on mykaia.app + download portal | Phases 3 / 6 (web repo) |
 | **F** | Creation depth (NPC Studio, University, etc.) | Phase 7+ |
 | **G** | Optional SaaS | Later |
-| **H** | MyKAIA Hub v1 | Phases 4–5 prototypes; real sandbox Phase 7+ (web repo) |
+| **H** | MyKAIA Hub v1 | Phases 4â€“5 prototypes; real sandbox Phase 7+ (web repo) |
 
 ## Phase 1 explicit non-goals
 
@@ -62,6 +62,6 @@ Source: [`MYKAIA_PRODUCT_PLAN.md`](MYKAIA_PRODUCT_PLAN.md) section 16.
 
 ## Phase 2 status
 
-**UI/UX port landed (Steps 2.1–2.3).** Visual assets from `_KAIA_Wrapper` are under `assets/kaia_wrapper_port/`. Flutter shell now includes sidebar, drawers, chat surface chrome, avatar HUD, settings overlay, and light/dark theme with dual pond backgrounds.
+**UI/UX port landed (Steps 2.1â€“2.3).** Visual assets from `_KAIA_Wrapper` are under `assets/kaia_wrapper_port/`. Flutter shell now includes sidebar, drawers, chat surface chrome, avatar HUD, settings overlay, and light/dark theme with dual pond backgrounds.
 
 This phase is **UI/UX only**. Backend / live-agent / OpenClaw / connector wiring stays deferred to Phase 7+ per [`AGENT_FALLBACK_DESIGN.md`](AGENT_FALLBACK_DESIGN.md). Chat Send is a toast stub. Speaking spritesheet is present on disk and unwired (static avatar still only).

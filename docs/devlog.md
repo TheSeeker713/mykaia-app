@@ -149,3 +149,13 @@ Launched the Release exe. Window title `mykaia_app`, 1280x720, responding. Scree
 ## 2026-07-27 11:11 PM MDT — Phase 2 Step 2.4 docs update
 
 Updated `docs/ARCHITECTURE.md` for the ported UI shell: sidebar, drawers, chat surface, avatar HUD, settings, theme tokens, and `assets/kaia_wrapper_port/`. Called out stubs (toast-only chat Send, unwired spritesheet, no live backend). Updated `docs/ROADMAP.md` Phase 2 status to say the UI/UX port landed in Steps 2.1 through 2.3, with live-agent wiring still deferred to Phase 7+. Docs-only commit.
+
+## 2026-07-27 11:11 PM MDT — Phase 2 Step 2.5 closeout
+
+Phase 2 is complete for mykaia-app.
+
+What got ported: full visual asset pack from `_KAIA_Wrapper` under `assets/kaia_wrapper_port/`, plus a Flutter UI shell with pond background, MYKAIA sidebar and drawer list, chat surface chrome, KAIA frog avatar still, settings overlay, and light/dark theme with dual pond swap. Launch of the Windows Release build shows that shell instead of the Phase 1 empty placeholder home.
+
+What was excluded on purpose per the Step 2.1 audit: empty `src/lib/*` backend scaffolds (orchestration, models, connectors, db, tts, keychain, domain modules), Tauri SQL plugin theater, ADR-as-implementation, treating drawer/settings connector labels as real modules, Chat Send toast as a model path, and the external Voice-Agent tree.
+
+Still stub on purpose: chat Send toast only, speaking spritesheet unwired, no Drift schemas, no Tier 0/1/2 live agent, no world WebView, no Hub/marketplace (those stay in mykaia-web). Stopping here. No Phase 3 work started.
