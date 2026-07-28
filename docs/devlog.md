@@ -43,3 +43,7 @@ Added `lib/core/paths/ai_setup_paths.dart` with constants rooted at `D:\_Dev\AI-
 ## 2026-07-27 5:31 PM MDT — Phase 1 Step 1.5
 
 Ran `flutter pub get` again to confirm the lockfile is current. There is no Drift `@DriftDatabase` stub in `lib/` yet this phase, so I skipped `build_runner` rather than inventing a fake codegen run. `flutter analyze`: no issues. No lockfile delta after this pass, so this commit is the step devlog only.
+
+## 2026-07-27 6:02 PM MDT — Phase 1 Step 1.6
+
+First `flutter build windows` failed because Developer Mode was off (plugin symlinks) and then because `atlstr.h` was missing for `flutter_secure_storage_windows`. Enabled Developer Mode, installed VS component `Microsoft.VisualStudio.Component.VC.ATLMFC` into Build Tools 18, cleaned, and rebuilt. `flutter build windows` exit 0. Artifact verified on disk: `build\windows\x64\runner\Release\mykaia_app.exe` (91136 bytes, timestamp 07/27/2026 17:38:14). `flutter analyze` after the rebuild: no issues.
