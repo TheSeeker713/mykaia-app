@@ -137,3 +137,11 @@ Landed under `assets/kaia_wrapper_port/`:
 - `icons/` Tauri window/store icon set (png/ico/icns)
 
 `flutter pub get` exit 0. `flutter analyze`: no issues.
+
+## 2026-07-27 11:11 PM MDT — Phase 2 Step 2.3 UI/UX port committed
+
+Finished the stalled Step 2.3 port and got it onto main. Deleted `lib/app/theme.dart` on purpose; theme now lives in `lib/core/theme/kaia_colors.dart` and `theme_controller.dart` (light/dark tokens + dual pond assets). Added `lib/features/` shell, sidebar, chat surface, avatar HUD, drawer overlay, settings overlay, toasts. Wired `/` to `AppShellPage` in `lib/app/router.dart`.
+
+Checks re-run this step: `flutter analyze` no issues, `flutter test` 3/3 passed. First `flutter build windows` reported success but left a stale `app.so` timestamp, so I ran `flutter clean` and rebuilt. Clean build exit 0. Fresh artifact: `build\windows\x64\runner\Release\mykaia_app.exe` (mtime 07/27/2026 23:10:13) and `data\app.so` (mtime 23:09:48).
+
+Launched the Release exe. Window title `mykaia_app`, 1280x720, responding. Screenshot `build\phase2_ui_verify.png` shows: koi pond background, MYKAIA sidebar with New chat and drawer list (Automations through Calendar visible), solid Chat panel with welcome stub and Message KAIA / Send, KAIA frog avatar on the right, Theme and Settings at the sidebar bottom. Widget tests already open Settings (Appearance) and Journal drawer overlay. Chat Send stays toast-stub only. Speaking spritesheet is on disk from Step 2.2 and still unwired (static still only).
