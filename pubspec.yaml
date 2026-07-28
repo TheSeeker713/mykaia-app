@@ -35,3 +35,10 @@ hooks:
 
 flutter:
   uses-material-design: true
+  assets:
+    - assets/kaia_wrapper_port/avatar/
+    - assets/kaia_wrapper_port/backgrounds/
+    - assets/kaia_wrapper_port/sprites/
+    - assets/kaia_wrapper_port/source/
+    - assets/kaia_wrapper_port/video/
+    - assets/kaia_wrapper_port/icons/

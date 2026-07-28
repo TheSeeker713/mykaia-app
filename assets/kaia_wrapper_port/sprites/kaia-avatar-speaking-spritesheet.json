@@ -1,0 +1,23 @@
+{
+  "frameWidth": 1080,
+  "frameHeight": 1080,
+  "columns": 10,
+  "rows": 6,
+  "frameCount": 60,
+  "fps": 12,
+  "sheetWidth": 10800,
+  "sheetHeight": 6480,
+  "sourceClip": "assets/video/avatar/kaia-avatar-default.mp4",
+  "sourceRange": "0:00-0:05",
+  "sourceResolution": "1920x1080",
+  "sourceFps": 24,
+  "crop": "centered square min(iw,ih)",
+  "backgroundRemoval": {
+    "method": "connected-component flood-fill (sharp)",
+    "reason": "Source background is medium gray (~#CCC), not pure white; ffmpeg colorkey/white similarity ate pink dress and white trim. Flood-fill from edges preserves dress trim and daisy.",
+    "tolerance": 32,
+    "softEdge": 10,
+    "measuredBgApprox": [205, 204, 205]
+  },
+  "generatedDate": "2026-07-11"
+}

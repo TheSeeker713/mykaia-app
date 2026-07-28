@@ -122,3 +122,18 @@ Port the visual shell and media. Rebuild chat Send as a non-network stub. Do not
 Still accurate. Overall about 8 to 12 percent complete. UI shell with no working chat-to-model path. 60-frame speaking spritesheet exists; 60 to 32 trim still pending and unwired. Avatar HUD still shows the smaller solid-bg `public` still instead of the transparent `assets` still.
 
 Step 2.1 changes nothing in mykaia-app except this devlog entry.
+
+## 2026-07-27 6:50 PM MDT — Phase 2 Step 2.2 asset migration
+
+Copied (not moved) every visual asset from `_KAIA_Wrapper` into `assets/kaia_wrapper_port/`. Source project left untouched. Registered asset directories in `pubspec.yaml`. Also copied `docs/avatar-spritesheet-frame-analysis.md` into this repo's docs (60 to 32 trim still pending upstream).
+
+Landed under `assets/kaia_wrapper_port/`:
+- `avatar/kaia-avatar-default.webp` (transparent still, 504330 B)
+- `avatar/kaia-avatar-default-public.webp` (solid-bg still the Wrapper UI was loading, 58380 B)
+- `backgrounds/koi-pond-bg.webp`, `koi-pond-bg-dark.webp`
+- `sprites/kaia-avatar-speaking-spritesheet.webp` (~11 MB, 60 frames) + `.json` metadata
+- `video/kaia-avatar-default.mp4`
+- `source/` JPEG/WebP pipeline inputs (pond, frog, white-bg archive)
+- `icons/` Tauri window/store icon set (png/ico/icns)
+
+`flutter pub get` exit 0. `flutter analyze`: no issues.
