@@ -57,3 +57,68 @@ Explicitly not in this prototype yet: Tier 0/1 live agent wiring, Tier 2 bark ru
 ## 2026-07-27 6:26 PM MDT — Phase 2 ROADMAP renumber
 
 Updated `docs/ROADMAP.md` before any porting. Inserted Phase 2 as the KAIA Wrapper UI/UX + asset migration in mykaia-app. Shifted mykaia-web work: landing 2 to 3, Hub 3 to 4, Marketplace 4 to 5, app-as-web 5 to 6, MVP hardening 6+ to 7+. Changelog in the roadmap states why: the Wrapper already has a usable UI shell and media pack per product plan section 17, so bringing it in now avoids rebuilding that chrome later. This commit is docs only.
+
+## 2026-07-27 6:49 PM MDT — Phase 2 Step 2.1 audit inventory
+
+Read-only inventory of `D:\_Dev\Projects\_KAIA_Wrapper` (HEAD `72b2ea5`). Did not modify that project. Source stack is Tauri v2 + Next.js 16 static export + React 19 + Tailwind 4 + Zustand. It is a desktop web shell, so Phase 2 ports look and assets into Flutter rather than copying React files as-is.
+
+### Screens and widgets (pure UI)
+
+- `src/app/page.tsx`, `layout.tsx`: root mount
+- `src/components/shell/AppShell.tsx`: full-bleed pond background, sidebar + chat + avatar layout, overlays
+- `src/components/sidebar/Sidebar.tsx` + `drawerData.ts`: brand, New chat (no handler), 11 drawer labels, theme toggle, settings
+- `src/components/chat/ChatSurface.tsx`: welcome bubble, textarea, Send button that only pushes a toast (confirmed comment: Phase 1 UI only, no model wiring)
+- `src/components/avatar/KaiaAvatar.tsx`: static `<img>` HUD, no speaking animation
+- `src/components/drawers/DrawerFolder.tsx`: stage-2 modal with Card A/B/C placeholders
+- `src/components/settings/SettingsPanel.tsx`: Appearance (theme) works; Voice/Sound/Connectors sections are placeholder copy only
+- `src/components/shell/ToastHost.tsx`, `useEscDismissStack.ts`, `ErrorBoundary.tsx`: chrome UX
+- `src/stores/themeStore.ts`, `shellStore.ts`, `toastStore.ts`: in-memory UI state (theme not persisted)
+- `src/styles/tailwind.css`, `tokens.css`: design tokens, accent `#3d6b8c`, dual-asset pond backgrounds
+
+Empty component placeholders (`.gitkeep` only): focus, journal, tasks, calendar, reminders, progression, onboarding, sfx. No custom fonts in the repo.
+
+### Visual assets
+
+Served today under `public/images/`:
+- `avatar/kaia-avatar-default.webp` (58,380 B, solid white-bg, what the UI actually loads)
+- `background/koi-pond-bg.webp` (433,550 B)
+- `background/koi-pond-bg-dark.webp` (286,514 B)
+
+Also in `assets/` (copy all for the port; source stays untouched):
+- `images/avatar/kaia-avatar-default.webp` (504,330 B transparent, better still; UI currently misses it)
+- `images/avatar/kaia-avatar-speaking-spritesheet.webp` (~11 MB, 10x6, 60 frames @ 1080)
+- `images/avatar/kaia-avatar-speaking-spritesheet.json` (frameCount 60, fps 12)
+- `video/avatar/kaia-avatar-default.mp4` (~4.2 MB, unused by UI)
+- `source/` JPEG/WebP pipeline inputs for pond and frog
+- `docs/avatar-spritesheet-frame-analysis.md` notes 60 to 32 trim recommended and still pending
+- Tauri window icons under `src-tauri/icons/` (32/128/ico/icns and store tiles)
+- Empty dirs: `assets/audio/sfx`, `assets/audio/voice-samples`, `assets/images/onboarding/profiles/audhd` (`.gitkeep` only)
+
+Spritesheet is not in `public/` and has zero references from `src/`. Unwired.
+
+### Backend-coupled or backend-intent (EXCLUDE from port as product features)
+
+There is no working OpenClaw, Ollama, fetch, WebSocket, or Tauri invoke path in `src/`. Grep across `src`, `scripts`, and `src-tauri/src` found none of those. Exclude list for the port:
+
+1. Empty `src/lib/orchestration` (OpenClaw/agent router intent)
+2. Empty `src/lib/models`
+3. Empty `src/lib/connectors` and google-calendar scaffold
+4. Empty `src/lib/db`
+5. Empty `src/lib/tts` (real TTS lives outside this repo under AI-Setup Voice-Agent)
+6. Empty `src/lib/keychain`
+7. Empty `src/lib/{calendar,journal,tasks,reminders,progression,sfx,onboarding}`
+8. Tauri SQL plugin registration in `src-tauri/src/lib.rs` with no migrations
+9. Unused `@tauri-apps/plugin-sql` / API patterns as product surfaces
+10. ADR docs treated as shipped implementation (OpenClaw HOW, TTS ADR fiction)
+11. Drawer labels Models/Agents/Connectors/Fallback Models as real modules (labels only)
+12. Settings Voice/Sound/Connectors sections as working prefs (placeholders)
+13. Chat Send toast behavior as the model path (must be stub-only in Flutter too)
+14. External Voice-Agent / Qwen3-TTS tree (outside Wrapper)
+
+Port the visual shell and media. Rebuild chat Send as a non-network stub. Do not invent connector backends from empty folders.
+
+### Prior audit claim
+
+Still accurate. Overall about 8 to 12 percent complete. UI shell with no working chat-to-model path. 60-frame speaking spritesheet exists; 60 to 32 trim still pending and unwired. Avatar HUD still shows the smaller solid-bg `public` still instead of the transparent `assets` still.
+
+Step 2.1 changes nothing in mykaia-app except this devlog entry.
