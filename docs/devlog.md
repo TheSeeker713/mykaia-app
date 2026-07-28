@@ -47,3 +47,9 @@ Ran `flutter pub get` again to confirm the lockfile is current. There is no Drif
 ## 2026-07-27 6:02 PM MDT — Phase 1 Step 1.6
 
 First `flutter build windows` failed because Developer Mode was off (plugin symlinks) and then because `atlstr.h` was missing for `flutter_secure_storage_windows`. Enabled Developer Mode, installed VS component `Microsoft.VisualStudio.Component.VC.ATLMFC` into Build Tools 18, cleaned, and rebuilt. `flutter build windows` exit 0. Artifact verified on disk: `build\windows\x64\runner\Release\mykaia_app.exe` (91136 bytes, timestamp 07/27/2026 17:38:14). `flutter analyze` after the rebuild: no issues.
+
+## 2026-07-27 6:02 PM MDT — Phase 1 Step 1.7 closeout
+
+Phase 1 is complete for mykaia-app. The Windows prototype now has: Flutter 3.44.8 stable tooling on `D:\_Dev\tools\flutter`, a Windows-only scaffold with Riverpod/go_router/Drift/sqlite3mc/secure storage/webview_flutter/flutter_gemma deps, a minimal home shell, AI-Setup path constants under `D:\_Dev\AI-Setup\mykaia`, architecture docs including the full agent fallback design, and a verified `flutter build windows` artifact at `build\windows\x64\runner\Release\mykaia_app.exe`.
+
+Explicitly not in this prototype yet: Tier 0/1 live agent wiring, Tier 2 bark runtime, world WebView route / R3F package, Drift table implementations, macOS/Linux/iOS/Android targets, Hub/marketplace/landing/download portal code (those live in mykaia-web). Stopping here. No Phase 2 work started.

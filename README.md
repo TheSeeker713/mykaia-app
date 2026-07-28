@@ -1,4 +1,4 @@
-# MyKAIA
+﻿# MyKAIA
 
 **Keep At It, Always**
 
@@ -7,13 +7,13 @@ Native Flutter product for MyKAIA: local-first neurodivergent multitool with com
 | | |
 |--|--|
 | **Repo** | `mykaia-app` (this repo) |
-| **Sibling** | [`mykaia-web`](https://github.com/TheSeeker713/mykaia-web) — landing, Hub, marketplace, download portal at [mykaia.app](https://mykaia.app) |
-| **Copyright** | © Mycelia Interactive |
+| **Sibling** | [`mykaia-web`](https://github.com/TheSeeker713/mykaia-web) â€” landing, Hub, marketplace, download portal at [mykaia.app](https://mykaia.app) |
+| **Copyright** | Â© Mycelia Interactive |
 | **Product plan** | [`docs/MYKAIA_PRODUCT_PLAN.md`](docs/MYKAIA_PRODUCT_PLAN.md) (added in Phase 1) |
 
 ## Current status
 
-Phase 0 foundation. Flutter Windows prototype lands in Phase 1.
+Phase 1 Windows Flutter prototype complete. Phase 2 (mykaia-web landing) not started.
 
 ## Agent rules
 
@@ -23,4 +23,4 @@ See [`AGENTS.md`](AGENTS.md). Session rules: [`.cursor/agents.mdc`](.cursor/agen
 
 [`docs/devlog.md`](docs/devlog.md)
 
-© Mycelia Interactive. MyKAIA and "Keep At It, Always" are trademarks of Mycelia Interactive.
+Â© Mycelia Interactive. MyKAIA and "Keep At It, Always" are trademarks of Mycelia Interactive.
