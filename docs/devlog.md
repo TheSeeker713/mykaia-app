@@ -53,3 +53,7 @@ First `flutter build windows` failed because Developer Mode was off (plugin syml
 Phase 1 is complete for mykaia-app. The Windows prototype now has: Flutter 3.44.8 stable tooling on `D:\_Dev\tools\flutter`, a Windows-only scaffold with Riverpod/go_router/Drift/sqlite3mc/secure storage/webview_flutter/flutter_gemma deps, a minimal home shell, AI-Setup path constants under `D:\_Dev\AI-Setup\mykaia`, architecture docs including the full agent fallback design, and a verified `flutter build windows` artifact at `build\windows\x64\runner\Release\mykaia_app.exe`.
 
 Explicitly not in this prototype yet: Tier 0/1 live agent wiring, Tier 2 bark runtime, world WebView route / R3F package, Drift table implementations, macOS/Linux/iOS/Android targets, Hub/marketplace/landing/download portal code (those live in mykaia-web). Stopping here. No Phase 2 work started.
+
+## 2026-07-27 6:26 PM MDT — Phase 2 ROADMAP renumber
+
+Updated `docs/ROADMAP.md` before any porting. Inserted Phase 2 as the KAIA Wrapper UI/UX + asset migration in mykaia-app. Shifted mykaia-web work: landing 2 to 3, Hub 3 to 4, Marketplace 4 to 5, app-as-web 5 to 6, MVP hardening 6+ to 7+. Changelog in the roadmap states why: the Wrapper already has a usable UI shell and media pack per product plan section 17, so bringing it in now avoids rebuilding that chrome later. This commit is docs only.
