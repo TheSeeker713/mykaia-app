@@ -62,4 +62,6 @@ Source: [`MYKAIA_PRODUCT_PLAN.md`](MYKAIA_PRODUCT_PLAN.md) section 16.
 
 ## Phase 2 status
 
-UI/UX and visual asset port from `_KAIA_Wrapper` into this Flutter app. Backend / live-agent / OpenClaw / connector wiring stays deferred to Phase 7+ per [`AGENT_FALLBACK_DESIGN.md`](AGENT_FALLBACK_DESIGN.md).
+**UI/UX port landed (Steps 2.1–2.3).** Visual assets from `_KAIA_Wrapper` are under `assets/kaia_wrapper_port/`. Flutter shell now includes sidebar, drawers, chat surface chrome, avatar HUD, settings overlay, and light/dark theme with dual pond backgrounds.
+
+This phase is **UI/UX only**. Backend / live-agent / OpenClaw / connector wiring stays deferred to Phase 7+ per [`AGENT_FALLBACK_DESIGN.md`](AGENT_FALLBACK_DESIGN.md). Chat Send is a toast stub. Speaking spritesheet is present on disk and unwired (static avatar still only).

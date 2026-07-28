@@ -145,3 +145,7 @@ Finished the stalled Step 2.3 port and got it onto main. Deleted `lib/app/theme.
 Checks re-run this step: `flutter analyze` no issues, `flutter test` 3/3 passed. First `flutter build windows` reported success but left a stale `app.so` timestamp, so I ran `flutter clean` and rebuilt. Clean build exit 0. Fresh artifact: `build\windows\x64\runner\Release\mykaia_app.exe` (mtime 07/27/2026 23:10:13) and `data\app.so` (mtime 23:09:48).
 
 Launched the Release exe. Window title `mykaia_app`, 1280x720, responding. Screenshot `build\phase2_ui_verify.png` shows: koi pond background, MYKAIA sidebar with New chat and drawer list (Automations through Calendar visible), solid Chat panel with welcome stub and Message KAIA / Send, KAIA frog avatar on the right, Theme and Settings at the sidebar bottom. Widget tests already open Settings (Appearance) and Journal drawer overlay. Chat Send stays toast-stub only. Speaking spritesheet is on disk from Step 2.2 and still unwired (static still only).
+
+## 2026-07-27 11:11 PM MDT — Phase 2 Step 2.4 docs update
+
+Updated `docs/ARCHITECTURE.md` for the ported UI shell: sidebar, drawers, chat surface, avatar HUD, settings, theme tokens, and `assets/kaia_wrapper_port/`. Called out stubs (toast-only chat Send, unwired spritesheet, no live backend). Updated `docs/ROADMAP.md` Phase 2 status to say the UI/UX port landed in Steps 2.1 through 2.3, with live-agent wiring still deferred to Phase 7+. Docs-only commit.
