@@ -1,6 +1,6 @@
 ﻿# MyKAIA Roadmap
 
-Continuous phase numbering across **mykaia-app** and **mykaia-web**. Phases do not reset per repo.
+Historical note: the table below used continuous phase numbering across **mykaia-app** and **mykaia-web**. That shared scheme is **retired as of 2026-08-03**. Each repo now counts its own internal phases independently. Cross-repo sequencing authority is `ROOT_PHASE_PLAN.md` at the MyKAIA program root (`D:\_Dev\Projects\MyKAIA\`). Completed work keeps its original phase numbers (this repo's Phase 1 and Phase 2 stay Phase 1 and Phase 2).
 
 ## Repo split (locked)
 
@@ -28,6 +28,7 @@ Hub, marketplace, landing page, and download portal code are **never** scaffolde
 
 | Date | Change |
 |------|--------|
+| 2026-08-03 | Retired continuous shared phase numbering across mykaia-app and mykaia-web. Each repo now counts its own phases independently. Cross-repo sequencing authority moves to `ROOT_PHASE_PLAN.md` at the MyKAIA program root. Completed phase numbers (this repo Phase 1 and Phase 2) are unchanged. |
 | 2026-07-27 | Inserted Phase 2 as **KAIA Wrapper UI/UX + asset port** into mykaia-app. Shifted former web phases: landing 2â†’3, Hub 3â†’4, Marketplace 4â†’5, app-as-web 5â†’6, MVP hardening 6+â†’7+. Reason: `_KAIA_Wrapper` already has a usable UI shell and media pack (product plan section 17 donor map). Pulling that chrome into mykaia-app now avoids rebuilding the same shell later. |
 
 ## Platform sequencing (mykaia-app)
