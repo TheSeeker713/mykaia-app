@@ -1,26 +1,61 @@
 ---
-description: Binding session rules for mykaia-app. Created once in Phase 0. READ ONLY after initial creation. Do not write or edit this file in any future session.
+description: Binding session rules for mykaia-app. READ ONLY after creation except when Jeremy grants an explicit one-time write exception. Do not edit without such an exception.
 globs:
 alwaysApply: true
 ---
 
 # mykaia-app — agents.mdc (READ ONLY)
 
-**READ-ONLY RULE:** This file was created once during Phase 0. Do not write, edit, rewrite, or patch `.cursor/agents.mdc` in any later session. If rules need to change, update `AGENTS.md` or `.cursor/instructions.md` instead, or wait for Jeremy's explicit instruction to recreate this file.
+**READ-ONLY RULE:** Do not write, edit, rewrite, or patch `.cursor/agents.mdc` unless Jeremy Robards (CTO and CAIO, Mycelia Interactive LLC) grants an explicit one-time authorized exception in the same session. After that exception's task finishes, this file returns to read-only. Without a new exception, if rules need to change, update `AGENTS.md` or `.cursor/instructions.md` only.
 
 ## Scope
 
 This repository is **mykaia-app**, the Flutter product for MyKAIA. The sibling repo **mykaia-web** is separate. Do not mix Hub, marketplace, landing page, or download-portal work into this repo.
 
-## Standing rules
+## Phase and step structure
+
+Development proceeds in phases. Each phase is made of discrete steps.
+
+- Within an active phase, complete all steps in that phase without pausing for human input between steps.
+- Before starting the next phase, stop and wait for Jeremy's explicit go-ahead.
+- Do not begin a new phase on your own.
+
+## Test-gated steps
+
+Every step has a relevant test or check tied to it. The step is not complete until that check passes clean.
+
+- Flutter code or deps: `flutter analyze` (and `flutter test` when tests exist) must be clean
+- Docs/governance only: confirm files exist, are non-empty, and stay within allowed markdown paths
+- Windows build steps: `flutter build windows` exit 0 and the artifact path verified on disk
+- Other change types: the appropriate check for what changed
+
+A failed test means the step has failed. Do not proceed to the next step. Fix the issue, rerun the check, and only mark the step done once it passes clean.
+
+## Commit and push per step
+
+Every completed step, immediately after its test passes, is committed and pushed to `origin/main` of this repo. No batching multiple steps into one commit. No leaving a passed step uncommitted or unpushed. Do not push to mykaia-web from an app-only step.
+
+## Devlog (per-day files)
+
+Active path: `docs/devlogs/{YYYY-MM-DD}devlog.md` for each calendar day where work happens. Create the file on first work that day, or continue appending if it already exists. Append a new entry after every completed step. Do not batch entries at end of day or end of phase.
+
+Each entry must:
+
+- Be written in first person as Jeremy Robards, CTO and CAIO of Mycelia Interactive LLC, as if he personally wrote it after finishing that step
+- Read like a real human wrote it: genuine tone, some personality and dry or personal humor where it fits naturally; phrases like "I started doing," "I got stuck on," "that was frustrating," "wow, that actually worked," used where they'd genuinely apply, not forced into every entry
+- Be detailed and technically explicit about what was actually done in that step, matching the corresponding commit
+- Use a real date and timestamp
+- Contain no em dashes anywhere
+- Avoid "not X but Y" contrast constructions
+
+Archives under `docs/devlogs/` (`devlog-archive-NN.md` and any prior locked archives) are permanently locked. Never edit, append to, or delete them. All devlog files, current and archived, are committed to git normally.
+
+## Standing rules (unchanged)
 
 1. Verification before assertion: confirm filesystem/git/build state before claiming success.
-2. Tests before commit: relevant checks must pass clean before any commit.
-3. Commit and push to `origin/main` after every completed step in this repo.
-4. Append `docs/devlog.md` every step, first person as Jeremy, no em dashes, no contrast constructions.
-5. Markdown only in `/README.md`, `/AGENTS.md`, and `/docs/`.
-6. Branch policy: `main` only.
-7. CDP / live deploy: out of scope until Jeremy gives separate explicit approval for that action.
+2. Markdown only in `/README.md`, `/AGENTS.md`, and `/docs/` (includes `docs/devlogs/`).
+3. Branch policy: `main` only.
+4. CDP / live deploy: out of scope until Jeremy gives separate explicit approval for that action.
 
 ## Stack (locked for this repo)
 

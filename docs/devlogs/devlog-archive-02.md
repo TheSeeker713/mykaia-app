@@ -1,3 +1,8 @@
+> ARCHIVED, LOCKED. Permanent archive of the post-Phase-2 single-file
+> `docs/devlog.md` from before the per-day `docs/devlogs/{YYYY-MM-DD}devlog.md`
+> system started. Never edit, append to, or delete this file. New entries go
+> only in that day's file under `docs/devlogs/`.
+
 # MyKAIA App Devlog (continued)
 
 Continues from docs/devlog-archive-01.md, which is locked and must not be edited. This file picks up from Phase 2 closeout onward.
